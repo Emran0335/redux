@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1 - Scoreboard</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  <section class="section">
+      <!-- header  -->
+      <header class="header">
+        <div class="container">
+          <div class="header_wrapper">
+            <img src="./image/emran.png" alt="emrna's logo" class="logo" />
+            <h1 class="name">Scoreboard</h1>
+            <h5 class="total">Total</h5>
+          </div>
+        </div>
+      </header>
+      <!-- matches  -->
+      <div class="all_matches container" id="addMatch">
+        <!-- Each form tag is each row. This will render multiple times on clicking 'Add Another Match' -->
+        <div class="match" id="createMatch">
+          <div class="wrapper">
+            <button class="emran_delete">
+              <img src="./image//emran.png" alt="logo" />
+            </button>
+            <h3 class="emran_matchName">Match</h3>
+          </div>
+          <div class="inc_dec">
+            <form class="incrementForm">
+              <h4>Increment</h4>
+              <input type="number" name="increment" class="emran_increment" id="incrementInput"/>
+            </form>
+            <form class="decrementForm">
+              <h4>Decrement</h4>
+              <input type="number" name="decrement" class="emran_decrement" id="decrementInput"/>
+            </form>
+          </div>
+          <div class="numbers">
+            <h2 class="emran_singleResult" id="totalScore"></h2>
+          </div>
+        </div>
+      </div>
+      <!-- for adding another matches  -->
+      <div class="add_match">
+        <button class="btn emran_addMatch" id="anotherMatch">Add Another Match</button>
+        <button class="emran_reset">
+          <svg fill="none" width="24" height="24" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/200/svg" aria-hidden="true">
+            <path stroke-linecape="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          <span id="resetBtn">Reset</span>
+        </button>
+      </div>
+    </section>
+    <section class="mask"></section>
+    <script src="script.js"></script>
+  </body>
+</html>
