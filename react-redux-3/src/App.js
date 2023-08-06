@@ -1,9 +1,8 @@
 import "./App.css";
-import Counter from "./components/Counter";
 import { Provider } from "react-redux";
-import store from "./redux/store";
-import VariableCounter from "./components/VariableCounter";
+import store from "./combine-redux/store";
 import DynamicHooksCounter from "./components/DynamicHooksCounter";
+import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -12,9 +11,8 @@ function App() {
         <h1 className="max-w-md mx-auto text-center text-2xl font-bold">Simple Counter Application</h1>
 
         <div className="max-w-md mx-auto mt-10 space-y-5">
-          <Counter id="3" />
-          <VariableCounter />
-          <DynamicHooksCounter />
+          <Counter />
+          <DynamicHooksCounter/>
         </div>
       </div>
     </Provider>
