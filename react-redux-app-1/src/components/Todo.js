@@ -1,7 +1,7 @@
 import React from "react";
 import cancelImage from "../images/cancel.png";
 
-const Todo = () => {
+const Todo = ({todo}) => {
   return (
     <div className="flex justify-start items-center p-2 hover:bg-gray-100 hover:transition-all space-x-4 border-b border-gray-400/20 last:border-0">
       <div className="rounded-full bg-white border-2 border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-green-500">
@@ -10,7 +10,7 @@ const Todo = () => {
           <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" /> 
         </svg>
       </div>
-      <div className="select-none flex-1 line-through">Learn React from Learn with Sumit YouTube Channel</div>
+      <div className="select-none flex-1 line-through">{todo.text}</div>
       <div className="flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer border-green-500 hover:bg-green-500 bg-green-500"></div>
       <div className="flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer border-yellow-500 hover:bg-yellow-500"></div>
       <div className="flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer border-red-500 hover:bg-red-500"></div>

@@ -42,19 +42,19 @@ const todoReducer = (state = initailState, action) => {
         }
       });
     case DELETED:
-      // return new array with true/false boolean condition given by payload. 
+      // return new array with true/false boolean condition given by payload.
       return state.filter((todo) => todo.id !== action.payload);
     case ALLCOMPLETED:
       // completed property of each todo should be true.
-      return state.map(todo => {
+      return state.map((todo) => {
         return {
           ...todo,
-          completed: true
-        }
-      })
-      case CLEARCOMPLETED:
-        // return new array with checking completed property of each todo object of the state array.
-        return state.filter(todo=> !todo.completed === true)
+          completed: true,
+        };
+      });
+    case CLEARCOMPLETED:
+      // return new array with checking completed property of each todo object of the state array.
+      return state.filter((todo) => !todo.completed === true);
     default:
       return state;
   }
