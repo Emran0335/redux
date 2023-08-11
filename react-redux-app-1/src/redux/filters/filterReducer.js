@@ -9,12 +9,12 @@ const filterReducer = (state = initailState, action) => {
         status: action.payload,
       };
     case COLORCHANGED:
-      const { color, changeType } = action.payload;
-      switch (changeType) {
+      const { color, changedType } = action.payload;
+      switch (changedType) {
         case "added":
           return {
             ...state,
-            colors: [...state.colors, color],
+            colors: [...state.colors, color]
           };
         case "removed":
           return {

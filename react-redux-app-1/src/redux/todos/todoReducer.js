@@ -1,4 +1,11 @@
-import { ADDED, ALLCOMPLETED, CLEARCOMPLETED, COLORSELECTED, DELETED, TOGGLED } from "./actionTypes";
+import {
+  ADDED,
+  ALLCOMPLETED,
+  CLEARCOMPLETED,
+  COLORSELECTED,
+  DELETED,
+  TOGGLED,
+} from "./actionTypes";
 import initailState from "./initialState";
 
 const nextTodoId = (todosArr) => {
@@ -14,6 +21,7 @@ const todoReducer = (state = initailState, action) => {
         {
           text: action.payload,
           id: nextTodoId(state),
+          completed: false,
         },
       ];
     case TOGGLED:
@@ -24,7 +32,7 @@ const todoReducer = (state = initailState, action) => {
         } else {
           return {
             ...todo,
-            completed: !todo.completed,
+            completed: !todo.completed === true,
           };
         }
       });
@@ -37,12 +45,12 @@ const todoReducer = (state = initailState, action) => {
         } else {
           return {
             ...todo,
-            colors: [...todo.colors, color],
+            color: color,
           };
         }
       });
     case DELETED:
-      // return new array with true/false boolean condition given by payload.
+      // return new array with true/false boolean condition given by payload as todoId.
       return state.filter((todo) => todo.id !== action.payload);
     case ALLCOMPLETED:
       // completed property of each todo should be true.
