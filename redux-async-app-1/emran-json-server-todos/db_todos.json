@@ -1,0 +1,57 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Learn Vanilla JavaScript",
+      "completed": true,
+      "color": "yellow"
+    },
+    {
+      "id": 2,
+      "text": "Learn Modern ES6+ JavaScript",
+      "completed": true,
+      "color": "red"
+    },
+    {
+      "id": 3,
+      "text": "Learn React JavaScript",
+      "completed": true,
+      "color": "yellow"
+    },
+    {
+      "id": 4,
+      "text": "Learn Redux JavaScript",
+      "completed": true,
+      "color": "green"
+    },
+    {
+      "id": 5,
+      "text": "Learn Tailwindcss",
+      "completed": false,
+      "color": "red"
+    },
+    {
+      "id": 6,
+      "text": "Learn Next JS",
+      "completed": false,
+      "color": "red"
+    },
+    {
+      "id": 7,
+      "text": "Learn Node JS",
+      "completed": true,
+      "color": "green"
+    },
+    {
+      "id": 8,
+      "text": "Test",
+      "completed": false
+    },
+
+    {
+      "id": 9,
+      "text": "hdjhdjhddjdh",
+      "completed": false
+    }
+  ]
+}
