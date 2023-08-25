@@ -13,20 +13,23 @@ store.subscribe(()=> {
 
 
 // counter/increment and counter/decrement dispatch actions
-store.dispatch(counterActions.increment())
-store.dispatch(counterActions.increment())
-store.dispatch(counterActions.increment())
+// store.dispatch(counterActions.increment())
+// store.dispatch(counterActions.increment())
+// store.dispatch(counterActions.increment())
 
-store.dispatch(counterActions.decrement())
+// store.dispatch(counterActions.decrement())
 
 
 // dynamicCounter/increment and dynamicCounter/decrement dispatch actions
-store.dispatch(dynamicCounterActions.increment(5))
-store.dispatch(dynamicCounterActions.increment(5))
-store.dispatch(dynamicCounterActions.increment(5))
+// store.dispatch(dynamicCounterActions.increment(5))
+// store.dispatch(dynamicCounterActions.increment(5))
+// store.dispatch(dynamicCounterActions.increment(5))
 
-store.dispatch(dynamicCounterActions.decrement(8))
+// store.dispatch(dynamicCounterActions.decrement(8))
 
+
+// extraReducers- works for both the reducers. It will increase both the counter and dynamicCounter reducers initialStates.
+store.dispatch(counterActions.increment())
 /*
 action counter/increment @ 22:51:04.668
    prev state { counter: { count: 0 }, dynamicCounter: { count: 0 } }
