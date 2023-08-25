@@ -2,7 +2,7 @@ const createSlice = require("@reduxjs/toolkit").createSlice;
 
 // initialSate
 const initialState = {
-  count: 0,
+  count: 5,
 };
 
 const dynamicCounterSlice = createSlice({

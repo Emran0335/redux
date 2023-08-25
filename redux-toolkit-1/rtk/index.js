@@ -16,6 +16,7 @@ store.subscribe(()=> {
 store.dispatch(counterActions.increment())
 store.dispatch(counterActions.increment())
 store.dispatch(counterActions.increment())
+
 store.dispatch(counterActions.decrement())
 
 
