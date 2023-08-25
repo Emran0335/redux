@@ -22,10 +22,10 @@ const dynamicCounterSlice = createSlice({
       state.count -= action.payload;
     },
   },
-  // If we want to use other reducer, then we need to use extraRducers. So it is going to listen the counter/increment reducer.
+  // If we want to use other reducer, then we need to use extraReducers. So it is going to listen the counter/increment reducer.
   /*
   extraReducers: {
-    // it is called extraRducers middleware as we know rtk has its default middlewares.
+    // it is called extraReducers middleware as we know rtk has its default middlewares.
     ["counter/increment"]: (state, action) => {
       state.count += 1;
     },
