@@ -1,7 +1,8 @@
 const store = require("./app/store");
 // namely exports
-const {counterActions} = require("./features/counter/counterSlice");
-const {dynamicCounterActions} = require("./features/dynamicCounter/dynamicCounterSlice")
+// const {counterActions} = require("./features/counter/counterSlice");
+// const {dynamicCounterActions} = require("./features/dynamicCounter/dynamicCounterSlice")
+const {fetchPosts} = require("./features/post/postSlice")
 
 // initial state
 // console.log(`Initial State: ${JSON.stringify(store.getState())}`)
@@ -29,7 +30,8 @@ store.subscribe(()=> {
 
 
 // extraReducers- works for both the reducers. It will increase both the counter and dynamicCounter reducers initialStates.
-store.dispatch(counterActions.increment())
+// store.dispatch(counterActions.increment())
+store.dispatch(fetchPosts())
 /*
 action counter/increment @ 22:51:04.668
    prev state { counter: { count: 0 }, dynamicCounter: { count: 0 } }
