@@ -1,14 +1,16 @@
 import { ADD_TO_CART, REMOVE_FROM_CART, DELETE_ITEM } from "./actionTypes";
 
-const intialState = [];
-
 const isExist = (state, payload) =>
   state.some((item) => item.id === payload.id);
 
-const cartReducer = (state = intialState, action) => {
+const initialState = [];
+
+const cartReducer = (state = initialState, action) => {
   const copiedState = [...state];
   const { type, payload } = action;
+
   switch (type) {
+    // add product to cart
     case ADD_TO_CART:
       if (isExist(state, payload)) {
         if (payload.quantity <= 0) {
@@ -31,6 +33,7 @@ const cartReducer = (state = intialState, action) => {
         });
         return copiedState;
       }
+
     case REMOVE_FROM_CART:
       const currentItem = state.find((item) => item.id === payload.id);
       if (currentItem.cartQuantity > 1) {
@@ -46,10 +49,13 @@ const cartReducer = (state = intialState, action) => {
       } else {
         return copiedState.filter((item) => item.id !== payload.id);
       }
+
     case DELETE_ITEM:
       return copiedState.filter((item) => item.id !== payload.id);
+
     default:
       return state;
   }
 };
+
 export default cartReducer;

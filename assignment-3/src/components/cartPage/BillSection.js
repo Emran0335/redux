@@ -3,7 +3,7 @@ import React from "react";
 const BillSection = () => {
   return (
     <>
-      <div className="mx-auto max-w-[480px] overflow-hidden rounded-md border-[1px] p-[1rem] bg-slate-400">
+      <div className="mx-auto max-w-[480px] overflow-hidden rounded-md border-[1px] p-[1rem] bg-slate-400 mt-[24px]">
         <h4 className="mt-2 mb-8 text-xl font-bold text-center">
           Bill Details
         </h4>

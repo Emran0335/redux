@@ -12,22 +12,22 @@ export const addProduct = (product) => {
   };
 };
 
-export const addProductQuantity = (productNum) => {
+export const addProductQuantity = (product) => {
   return {
     type: ADD_PRODUCT_QUANTITY,
-    payload: productNum,
+    payload: product,
   };
 };
 
-export const RemoveProductQuantity = (productId) => {
+export const removeProductQuantity = (product) => {
   return {
     type: REMOVE_PRODUCT_QUANTITY,
-    payload: productId,
+    payload: product,
   };
 };
-export const addManyQuantity = (productNum) => {
+export const addManyQuantity = (product) => {
   return {
     type: ADD_MANY_QUANTITY,
-    payload: productNum,
+    payload: product,
   };
 };

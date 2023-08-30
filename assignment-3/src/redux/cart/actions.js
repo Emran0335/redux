@@ -6,15 +6,15 @@ export const addCart = (product) => {
     payload: product,
   };
 };
-export const removeCart = (productId) => {
+export const removeCart = (product) => {
   return {
     type: REMOVE_FROM_CART,
-    payload: productId,
+    payload: product,
   };
 };
-export const deleteCart = (productId) => {
+export const deleteCart = (product) => {
   return {
     type: DELETE_ITEM,
-    payload: productId,
+    payload: product,
   };
 };
