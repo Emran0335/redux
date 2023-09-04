@@ -1,0 +1,15 @@
+{
+  "name": "server-todos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server --watch db_videos.json --no-cors true --port 9000"
+  },
+  "keywords": [],
+  "author": "Emran Hossain",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}
