@@ -9,7 +9,7 @@ const VideoPlayer = ({ title, link }) => {
       title={title}
       frameBorder=""
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullscreen
+      allowFullScreen
     ></iframe>
   );
 };
