@@ -1,15 +1,15 @@
 {
   "transactions": [
     {
-      "name": "employment",
+      "name": "Employment",
       "type": "income",
       "amount": 21000,
       "id": 1
     },
     {
-      "name": "family",
+      "name": "Family and Internet",
       "type": "expense",
-      "amount": 8000,
+      "amount": 9000,
       "id": 2
     }
   ]

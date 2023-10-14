@@ -11,6 +11,7 @@ const initialState = {
   isLoading: false,
   isError: false,
   error: "",
+  editing: {},
 };
 
 export const fetchTransactions = createAsyncThunk(
@@ -50,7 +51,16 @@ const transactionSlice = createSlice({
   // foler name is preferred
   name: "transaction",
   initialState,
-
+  // to edit the global state so that we can change the mode of the transaction
+  reducers: {
+    editActive: (state, action) => {
+      // editing property is created
+      state.editing = action.payload;
+    },
+    editInActive: (state) => {
+      state.editing = {};
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchTransactions.pending, (state) => {
@@ -104,10 +114,12 @@ const transactionSlice = createSlice({
         state.isError = false;
       })
       .addCase(removeTransaction.fulfilled, (state, action) => {
+        //console.log(action); if we look at the browser console, we will find the mete and arg will the current id of the deleted transaction
         state.isLoading = false;
         state.isError = false;
         state.transactions = state.transactions.filter(
-          (t) => t.id !== action.payload
+          // action.payload cannot provide the id
+          (t) => t.id !== action.meta.arg
         );
       })
       .addCase(removeTransaction.rejected, (state, action) => {
@@ -118,4 +130,5 @@ const transactionSlice = createSlice({
   },
 });
 
+export const { editActive, editInActive } = transactionSlice.actions;
 export default transactionSlice.reducer;
