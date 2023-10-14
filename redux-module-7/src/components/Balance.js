@@ -6,7 +6,7 @@ const Balance = () => {
       <p>Your Current Balance</p>
       <h3>
         <span>BDT</span>
-        <span>10500</span>
+        <span style={{ marginLeft: "4px" }}>10500</span>
       </h3>
     </div>
   );

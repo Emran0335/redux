@@ -1,43 +1,86 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createTransaction } from "../features/transaction/transactionSlice";
 
 const Form = () => {
+  const [name, setName] = useState("");
+  const [type, setType] = useState("");
+  const [amount, setAmount] = useState("");
+
+  const dispatch = useDispatch();
+  // just to show error
+  const { isLoading, isError } = useSelector((state) => state.transaction);
+  const handleCreate = (e) => {
+    e.preventDefault();
+    dispatch(
+      createTransaction({
+        name: name,
+        type: type,
+        amount: Number(amount),
+      })
+    );
+    setName("");
+    setType("");
+    setAmount("");
+  };
+
   return (
     <div className="form">
       <h3>Add new transaction</h3>
-      <div className="form-group">
-        <label htmlFor="transaction_name">Name</label>
-        <input type="text" name="transaction_name" placeholder="My Salary" />
-      </div>
-      <div className="form-group radio">
-        <label htmlFor="transaction_name">Type</label>
-        <div className="radio_group">
-          <input type="radio" name="transaction_name" placeholder="My Salary" />
-        </div>
-      </div>
-      <div className="form-group radio">
-        <label htmlFor="transaction_type">Type</label>
-        <div className="radio_group">
-          <input type="radio" value="income" name="transaction_type" checked />
-          <label htmlFor="transaction_type">Income</label>
-        </div>
-        <div className="radio_group">
+      <form onSubmit={handleCreate}>
+        <div className="form-group">
+          <label>Name</label>
           <input
-            type="radio"
-            value="expense"
-            name="transaction_type"
-            placeholder="Expense"
+            type="text"
+            required
+            name="name"
+            value={name}
+            placeholder="enter title"
+            onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor="transaction_type">Expense</label>
         </div>
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="transaction_amount">Amount</label>
-        <input type="number" placeholder="300" name="transaction_amount" />
-      </div>
-
-      <button className="btn">Add Transaction</button>
-
+        <div className="form-group radio">
+          <label>Type</label>
+          <div className="radio_group">
+            <input
+              type="radio"
+              required
+              value="income"
+              name="type"
+              checked={type === "income"}
+              onChange={(e) => setType("income")}
+            />
+            <label>Income</label>
+          </div>
+          <div className="radio_group">
+            <input
+              type="radio"
+              value="expense"
+              name="type"
+              checked={type === "expense"}
+              onChange={(e) => setType("expense")}
+            />
+            <label>Expense</label>
+          </div>
+        </div>
+        <div className="form-group">
+          <label>Amount</label>
+          <input
+            type="number"
+            required
+            placeholder="enter amount"
+            name="amount"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
+        </div>
+        <button disabled={isLoading} className="btn" type="submit">
+          Add Transaction
+        </button>
+        {!isLoading && isError && (
+          <p className="error">There was an error occured!</p>
+        )}
+      </form>
       <button className="btn cancel_edit">Cancel Edit</button>
     </div>
   );
