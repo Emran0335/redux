@@ -1,0 +1,16 @@
+{
+  "transactions": [
+    {
+      "name": "Employment",
+      "type": "income",
+      "amount": 21000,
+      "id": 1
+    },
+    {
+      "name": "Family and Internet",
+      "type": "expense",
+      "amount": 9000,
+      "id": 2
+    }
+  ]
+}
