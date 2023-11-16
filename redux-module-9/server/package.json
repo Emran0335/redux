@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Emran Hossain",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
+    "nodemon": "^3.0.1"
+  }
+}

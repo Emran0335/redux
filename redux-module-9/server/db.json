@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "email": "emran12345@gmail.com",
+      "password": "$2a$10$IckK8V1VWHjdCjCQE9BHbecep2eIJTyNxHDVaGu1/07ENyT.cxVRS",
+      "name": "Emran",
+      "confirmPassword": "12345",
+      "id": 1
+    },
+    {
+      "email": "farjana12345@gmail.com",
+      "password": "$2a$10$sKE3syww94wnWX4d0r1MWebo8Xp5zP5Yoy6RPpgjajbjPsK43N62S",
+      "name": "Farjana",
+      "confirmPassword": "12345",
+      "id": 2
+    }
+  ],
+  "conversations": [
+    {
+      "id": 1,
+      "participants": "farjana12345@gmail.com-emran12345@gmail.com",
+      "users": [
+        {
+          "email": "emran12345@gmail.com",
+          "name": "Farjana",
+          "id": 1
+        },
+        {
+          "email": "farjana12345@gmail.com",
+          "name": "Emran",
+          "id": 2
+        }
+      ],
+      "message": "How are you?",
+      "timestamp": 1661976143678
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "conversationId": 1,
+      "sender": {
+        "email": "emran12345@gmail.com",
+        "name": "Emran",
+        "id": 1
+      },
+      "receiver": {
+        "email": "farjana12345@gmail.com",
+        "name": "Farjana",
+        "id": 2
+      },
+      "message": "Hello",
+      "timestamp": 1661976143557
+    },
+    {
+      "id": 2,
+      "conversationId": 2,
+      "sender": {
+        "email": "farjana12345@gmail.com",
+        "name": "Farjana",
+        "id": 2
+      },
+      "receiver": {
+        "email": "emran12345@gmail.com",
+        "name": "Emran",
+        "id": 1
+      },
+      "message": "Hi",
+      "timestamp": 1661976143559
+    }
+  ]
+}

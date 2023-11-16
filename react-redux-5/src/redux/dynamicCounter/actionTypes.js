@@ -1,3 +1,3 @@
 // D means dyanmic
-export const DINCREMENT = "dynamicCounter/increment";
-export const DDECREMENT = "dynamicCounter/decrement";
+export const DINCREMENT = "dynamicCounter/dincrement";
+export const DDECREMENT = "dynamicCounter/ddecrement";
