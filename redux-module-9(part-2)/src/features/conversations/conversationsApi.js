@@ -1,6 +1,6 @@
+import io from "socket.io-client";
 import { apiSlice } from "../api/apiSlice";
 import { messagesApi } from "../messages/messagesApi";
-import io from "socket.io-client";
 
 export const conversationsApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -29,7 +29,51 @@ export const conversationsApi = apiSlice.injectEndpoints({
           socket.on("conversation", (data) => {
             // console.log(data);
             updateCachedData((draftState) => {
-              const conversation = draftState.find((c) => c.id == data?.id);
+              const conversation = draftState.find(
+                (c) => c.id == data?.data?.id
+              );
+              if (conversation) {
+                conversation.message = data?.data?.message;
+                conversation.timestamp = data?.data?.timestamp;
+              } else {
+                // do nothing
+              }
+            });
+          });
+        } catch (error) {}
+        // to remove the cache entry, when the client is not in the conversation mode
+        await cacheEntryRemoved;
+        socket.close();
+      },
+    }),
+    // for getting more data for the new pages
+    getMoreConversations: builder.query({
+      query: ({email, page}) =>
+        `/conversations?participants_like=${email}&_sort=timestamp&_order=des&_page=${page}&_limit=${
+          import.meta.env.VITE_APP_CONVERSATIONS_PER_PAGE
+        }`,
+      async onCacheEntryAdded(
+        arg,
+        { updateCachedData, cacheDataLoaded, cacheEntryRemoved }
+      ) {
+        // create socket
+        const socket = io("http://localhost:9000", {
+          reconnectionDelay: 1000,
+          reconnection: true,
+          reconnectionAttempts: 10,
+          transports: ["websocket"],
+          agent: false,
+          upgrade: false,
+          rejectUnauthorized: false,
+        });
+        try {
+          await cacheDataLoaded;
+          socket.on("conversation", (data) => {
+            // console.log(data);
+            updateCachedData((draftState) => {
+              const conversation = draftState.find(
+                (c) => c.id == data?.data?.id
+              );
               if (conversation) {
                 conversation.message = data?.data?.message;
                 conversation.timestamp = data?.data?.timestamp;
