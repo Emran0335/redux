@@ -16,7 +16,7 @@ const nextTodoId = (todosArr) => {
 const todoReducer = (state = initailState, action) => {
   switch (action.type) {
     case LOADED:
-      // it is a thunk funtion and it will load the actual data to the initialState;
+      // it is a thunk function and it will load the actual data to the initialState;
       return action.payload;
       case ADDED:
       // new todo object with id and text.
